@@ -1,4 +1,4 @@
-package com.oogzy.schedule;
+package com.oogzy.spring.boot.schedule;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
