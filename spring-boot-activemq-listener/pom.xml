@@ -9,13 +9,13 @@
     <relativePath>..</relativePath>
   </parent>
   <groupId>com.oogzy.spring.boot.schedule</groupId>
-  <artifactId>spring-boot-schedule</artifactId>
+  <artifactId>spring-jms-listener</artifactId>
   <packaging>jar</packaging>
-  <name>Spring Schedule Example</name>
+  <name>Spring JMS Listener Example</name>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <artifactId>spring-boot-starter-activemq</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -44,7 +44,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.oogzy.spring.boot.schedule.ScheduleApplication</mainClass>
+              <mainClass>com.oogzy.spring.boot.jms.ListenerApplication</mainClass>
             </manifest>
           </archive>
         </configuration>

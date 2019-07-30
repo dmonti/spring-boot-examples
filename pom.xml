@@ -21,6 +21,7 @@
   </properties>
   <modules>
     <module>spring-boot-scheduled</module>
+    <module>spring-boot-activemq-listener</module>
   </modules>
   <build>
     <plugins>
