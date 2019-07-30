@@ -9,13 +9,13 @@
     <relativePath>..</relativePath>
   </parent>
   <groupId>com.oogzy.spring.boot.jms</groupId>
-  <artifactId>spring-activemq-listener</artifactId>
+  <artifactId>spring-artemis-listener</artifactId>
   <packaging>jar</packaging>
-  <name>ActiveMQ Listener Example</name>
+  <name>Artemis Listener Example</name>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-activemq</artifactId>
+      <artifactId>spring-boot-starter-artemis</artifactId>
     </dependency>
   </dependencies>
   <build>

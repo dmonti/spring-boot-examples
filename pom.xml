@@ -9,7 +9,7 @@
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.oogzy.spring.boot</groupId>
-  <artifactId>spring-examples-build</artifactId>
+  <artifactId>spring-boot-examples</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
   <name>Spring Boot Examples</name>
@@ -20,31 +20,29 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
-    <module>spring-boot-scheduled</module>
     <module>spring-boot-activemq-listener</module>
+    <module>spring-boot-artemis-embedded</module>
+    <module>spring-boot-artemis-listener</module>
+    <module>spring-boot-schedule</module>
   </modules>
   <build>
     <plugins>
       <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.4</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>test</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <release>${java.release}</release>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
   <scm>
     <connection>scm:git@github.com:dmonti/spring-boot-examples.git</connection>
@@ -52,20 +50,4 @@
     <url>https://github.com/dmonti/spring-boot-examples</url>
     <tag>HEAD</tag>
   </scm>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <!-- select non-aggregate reports -->
-              <report>report</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>
 </project>
