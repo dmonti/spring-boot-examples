@@ -14,7 +14,7 @@
   <packaging>pom</packaging>
   <name>Spring Boot Examples</name>
   <properties>
-    <revision>1.0.0</revision>
+    <revision>2.1.6.RELEASE</revision>
     <main.basedir>${basedir}</main.basedir>
     <java.release>11</java.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
