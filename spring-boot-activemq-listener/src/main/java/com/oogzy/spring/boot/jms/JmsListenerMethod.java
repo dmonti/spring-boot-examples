@@ -11,14 +11,14 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyQueueListener {
-    private static final Logger LOGGER = LoggerFactory.getLogger( MyQueueListener.class );
+public class JmsListenerMethod {
+    private static final Logger LOGGER = LoggerFactory.getLogger( JmsListenerMethod.class );
 
     /**
-     * Configure the broker URL at application.yml
-     * 
-     * More configurations:
-     * https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+     * Broker URL configuration at application.yml file </br>
+     * </br>
+     * More configurations:</br>
+     * {@link https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html}
      */
     @JmsListener ( destination = "myQueue" )
     public void receive ( Message message ) throws JMSException {
@@ -34,5 +34,11 @@ public class MyQueueListener {
         } else {
             throw new RuntimeException( "Message type not implemented" );
         }
+    }
+
+    @JmsListener ( destination = "myTextQueue" )
+    public void receiveText ( TextMessage message ) throws JMSException {
+        LOGGER.info( "Message {} received" , message.getJMSMessageID() );
+        LOGGER.info( "Message text: {}" , message.getText() );
     }
 }

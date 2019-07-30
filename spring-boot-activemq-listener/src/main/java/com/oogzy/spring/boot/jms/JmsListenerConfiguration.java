@@ -5,5 +5,5 @@ import org.springframework.jms.annotation.EnableJms;
 
 @EnableJms
 @Configuration
-public class JmsListenerApplicationConfig {
+public class JmsListenerConfiguration {
 }
