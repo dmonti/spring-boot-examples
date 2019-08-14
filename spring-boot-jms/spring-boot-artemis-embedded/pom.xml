@@ -6,16 +6,31 @@
     <groupId>com.oogzy.spring.boot</groupId>
     <artifactId>spring-boot-examples</artifactId>
     <version>${revision}</version>
-    <relativePath>..</relativePath>
+    <relativePath>../..</relativePath>
   </parent>
   <groupId>com.oogzy.spring.boot.jms</groupId>
-  <artifactId>spring-artemis-listener</artifactId>
+  <artifactId>spring-artemis-embedded</artifactId>
   <packaging>jar</packaging>
-  <name>Artemis Listener Example</name>
+  <name>Artemis Embedded Example</name>
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-artemis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>artemis-jms-server</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>artemis-junit</artifactId>
+      <version>${artemis.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -44,7 +59,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.oogzy.spring.boot.jms.ListenerApplication</mainClass>
+              <mainClass>com.oogzy.spring.boot.jms.ArtemisBrokerApplication</mainClass>
             </manifest>
           </archive>
         </configuration>

@@ -20,10 +20,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
-    <module>spring-boot-activemq-listener</module>
-    <module>spring-boot-artemis-embedded</module>
-    <module>spring-boot-artemis-listener</module>
-    <module>spring-boot-artemis-producer</module>
+    <module>spring-boot-jms/spring-boot-activemq-listener</module>
+    <module>spring-boot-jms/spring-boot-artemis-embedded</module>
+    <module>spring-boot-jms/spring-boot-artemis-listener</module>
+    <module>spring-boot-jms/spring-boot-artemis-producer</module>
     <module>spring-boot-schedule</module>
   </modules>
   <build>

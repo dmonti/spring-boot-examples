@@ -6,7 +6,7 @@
     <groupId>com.oogzy.spring.boot</groupId>
     <artifactId>spring-boot-examples</artifactId>
     <version>${revision}</version>
-    <relativePath>..</relativePath>
+    <relativePath>../..</relativePath>
   </parent>
   <groupId>com.oogzy.spring.boot.jms</groupId>
   <artifactId>spring-activemq-listener</artifactId>
@@ -44,7 +44,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.oogzy.spring.boot.jms.ListenerApplication</mainClass>
+              <mainClass>com.oogzy.spring.boot.jms.JmsListenerApplication</mainClass>
             </manifest>
           </archive>
         </configuration>
