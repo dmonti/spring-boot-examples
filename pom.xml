@@ -23,6 +23,7 @@
     <module>spring-boot-activemq-listener</module>
     <module>spring-boot-artemis-embedded</module>
     <module>spring-boot-artemis-listener</module>
+    <module>spring-boot-artemis-producer</module>
     <module>spring-boot-schedule</module>
   </modules>
   <build>
