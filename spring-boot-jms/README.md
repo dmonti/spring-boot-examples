@@ -1,6 +1,6 @@
 ### [Spring Boot Common Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
 
-### JMS ([JmsProperties](https://github.com/spring-projects/spring-boot/tree/v2.1.7.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/JmsProperties.java))
+#### JMS ([JmsProperties](https://github.com/spring-projects/spring-boot/tree/v2.1.7.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/jms/JmsProperties.java))
 ```properties
 spring.jms.cache.consumers=false # Whether to cache message consumers.
 spring.jms.cache.enabled=true # Whether to cache sessions.
