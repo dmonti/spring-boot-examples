@@ -8,13 +8,10 @@
     <relativePath>../..</relativePath>
   </parent>
   <groupId>com.oogzy.spring.cloud</groupId>
-  <artifactId>spring-cloud-zuul</artifactId>
+  <artifactId>spring-cloud-zuul-client</artifactId>
+  <name>Spring Cloud Zuul Client</name>
   <packaging>jar</packaging>
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
@@ -22,10 +19,6 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.reactivex</groupId>
-      <artifactId>rxjava</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

@@ -9,6 +9,7 @@
   </parent>
   <groupId>com.oogzy.spring.cloud</groupId>
   <artifactId>spring-cloud-eureka-server</artifactId>
+  <name>Spring Cloud Eureka Server</name>
   <packaging>jar</packaging>
   <dependencies>
     <dependency>

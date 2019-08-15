@@ -10,12 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ServiceInstanceRestController {
+public class MicroServiceController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
     @RequestMapping ( "/service-instances/{applicationName}" )
     public List < ServiceInstance > serviceInstancesByApplicationName ( @PathVariable String applicationName ) {
         return discoveryClient.getInstances( applicationName );
+    }
+
+    @RequestMapping ( "hello" )
+    public String hello () {
+        return "Hello World!";
     }
 }
