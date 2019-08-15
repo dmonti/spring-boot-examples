@@ -1,7 +1,7 @@
 ### [Spring Cloud Configuration Properties](https://cloud.spring.io/spring-cloud-static/Greenwich.RELEASE/multi/multi__appendix_compendium_of_configuration_properties.html)
 
 #### Spring Eureka Server for service discovey
-Register all microservices, starts at:
+Registrion server for the microservices, starts at:
 - http://localhost:8761
 
 #### Spring Eureka Client for microservice registration
