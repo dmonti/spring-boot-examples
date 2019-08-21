@@ -10,6 +10,6 @@ A simple microservice with 2 actions:
 - http://localhost:9000/service-instances/spring-service1
 
 #### Spring Zuul Client as API Gateway
-An API Gateway to the microservice, can be accessed from:
+An API Gateway to the microservice (Eureka Client), can be accessed from:
 - http://localhost:8762/service1/hello
 - http://localhost:8762/service1/service-instances/spring-service1
