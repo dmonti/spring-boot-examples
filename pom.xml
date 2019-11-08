@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.8.RELEASE</version>
+    <version>2.2.1.RELEASE</version>
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.oogzy.spring.boot</groupId>
@@ -18,17 +18,29 @@
     <main.basedir>${basedir}</main.basedir>
     <java.release>11</java.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring-cloud.version>Hoxton.RC1</spring-cloud.version>
   </properties>
   <modules>
     <module>spring-boot-cloud/spring-cloud-eureka-client</module>
     <module>spring-boot-cloud/spring-cloud-eureka-server</module>
-    <module>spring-boot-cloud/spring-cloud-zuul-client</module>
+    <module>spring-boot-cloud/spring-cloud-gateway</module>
     <module>spring-boot-jms/spring-boot-activemq-listener</module>
     <module>spring-boot-jms/spring-boot-artemis-embedded</module>
     <module>spring-boot-jms/spring-boot-artemis-listener</module>
     <module>spring-boot-jms/spring-boot-artemis-producer</module>
     <module>spring-boot-schedule</module>
   </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
@@ -48,6 +60,13 @@
       </plugins>
     </pluginManagement>
   </build>
+  <repositories>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/milestone</url>
+    </repository>
+  </repositories>
   <scm>
     <connection>scm:git@github.com:dmonti/spring-boot-examples.git</connection>
     <developerConnection>scm:git@github.com:dmonti/spring-boot-examples.git</developerConnection>
