@@ -29,6 +29,7 @@
     <module>spring-boot-jms/spring-boot-artemis-listener</module>
     <module>spring-boot-jms/spring-boot-artemis-producer</module>
     <module>spring-boot-schedule</module>
+    <module>spring-boot-websocket/spring-boot-messagebroker-websocket</module>
   </modules>
   <dependencyManagement>
     <dependencies>
