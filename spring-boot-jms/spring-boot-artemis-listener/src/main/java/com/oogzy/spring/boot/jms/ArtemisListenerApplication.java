@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ArtemisListenerApplication {
-    public static void main ( String[] args ) {
-        SpringApplication.run( ArtemisListenerApplication.class , args );
-    }
+
+	public static void main(String[] args) {
+		SpringApplication.run(ArtemisListenerApplication.class, args);
+	}
+
 }

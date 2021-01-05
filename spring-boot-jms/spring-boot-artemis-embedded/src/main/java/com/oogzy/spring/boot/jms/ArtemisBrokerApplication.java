@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ArtemisBrokerApplication {
-    public static void main ( String[] args ) {
-        SpringApplication.run( ArtemisBrokerApplication.class , args );
-    }
+
+	public static void main(String[] args) {
+		SpringApplication.run(ArtemisBrokerApplication.class, args);
+	}
+
 }

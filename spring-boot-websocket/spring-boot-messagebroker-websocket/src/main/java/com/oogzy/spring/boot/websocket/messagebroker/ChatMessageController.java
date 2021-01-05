@@ -12,10 +12,12 @@ import com.oogzy.spring.boot.websocket.messagebroker.dto.OutboundMessage;
 
 @Controller
 public class ChatMessageController {
-  @MessageMapping("/chat")
-  @SendTo("/topic/messages")
-  public OutboundMessage send(final InboundMessage message) throws Exception {
-    final String time = new SimpleDateFormat("HH:mm:ss").format(new Date());
-    return new OutboundMessage(message.getFrom(), message.getText(), time);
-  }
+
+	@MessageMapping("/chat")
+	@SendTo("/topic/messages")
+	public OutboundMessage send(final InboundMessage message) throws Exception {
+		final String time = new SimpleDateFormat("HH:mm:ss").format(new Date());
+		return new OutboundMessage(message.getFrom(), message.getText(), time);
+	}
+
 }

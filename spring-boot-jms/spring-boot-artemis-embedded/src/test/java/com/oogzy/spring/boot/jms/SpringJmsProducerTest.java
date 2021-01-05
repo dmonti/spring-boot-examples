@@ -1,6 +1,5 @@
 package com.oogzy.spring.boot.jms;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.concurrent.CountDownLatch;
@@ -18,40 +17,42 @@ import org.springframework.jms.core.JmsTemplate;
 
 @SpringBootTest
 public class SpringJmsProducerTest {
-    private static final Logger LOGGER = LoggerFactory.getLogger( SpringJmsProducerTest.class );
 
-    CountDownLatch latch = new CountDownLatch( 1 );
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringJmsProducerTest.class);
 
-    public ActiveMQConnectionFactory activeMQConnectionFactory () {
-        return new ActiveMQConnectionFactory( "tcp://localhost:61616" );
-    }
+	CountDownLatch latch = new CountDownLatch(1);
 
-    public CachingConnectionFactory cachingConnectionFactory () {
-        return new CachingConnectionFactory( activeMQConnectionFactory() );
-    }
+	public ActiveMQConnectionFactory activeMQConnectionFactory() {
+		return new ActiveMQConnectionFactory("tcp://localhost:61616");
+	}
 
-    public JmsTemplate jmsTemplate () {
-        return new JmsTemplate( cachingConnectionFactory() );
-    }
+	public CachingConnectionFactory cachingConnectionFactory() {
+		return new CachingConnectionFactory(activeMQConnectionFactory());
+	}
 
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory () {
-        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-        factory.setConnectionFactory( activeMQConnectionFactory() );
-        factory.setConcurrency( "1-1" );
-        return factory;
-    }
+	public JmsTemplate jmsTemplate() {
+		return new JmsTemplate(cachingConnectionFactory());
+	}
 
-    @JmsListener ( destination = "myQueue" )
-    public void receive ( String message ) {
-        LOGGER.info( "Message received: {}" , message );
-        latch.countDown();
-    }
+	public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
+		DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+		factory.setConnectionFactory(activeMQConnectionFactory());
+		factory.setConcurrency("1-1");
+		return factory;
+	}
 
-    @Test
-    public void testSend () throws Exception {
-        jmsTemplate().convertAndSend( "myQueue" , "Hello World!" );
+	@JmsListener(destination = "myQueue")
+	public void receive(String message) {
+		LOGGER.info("Message received: {}", message);
+		latch.countDown();
+	}
 
-        latch.await( 1 , TimeUnit.SECONDS );
-        assertEquals( 0 , latch.getCount() );
-    }
+	@Test
+	public void testSend() throws Exception {
+		jmsTemplate().convertAndSend("myQueue", "Hello World!");
+
+		latch.await(1, TimeUnit.SECONDS);
+		assertEquals(0, latch.getCount());
+	}
+
 }

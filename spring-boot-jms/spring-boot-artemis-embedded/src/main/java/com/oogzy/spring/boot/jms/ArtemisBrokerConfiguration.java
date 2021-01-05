@@ -13,26 +13,29 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ArtemisBrokerConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger( ArtemisBrokerConfiguration.class );
 
-    @Autowired
-    private ArtemisProperties artemisProperties;
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArtemisBrokerConfiguration.class);
 
-    @Bean
-    public ArtemisConfigurationCustomizer customizer () {
-        return new ArtemisConfigurationCustomizer() {
-            String brokerUrl = Stream.of( "tcp://localhost:" , String.valueOf( artemisProperties.getPort() ) ) //
-                    .collect( Collectors.joining() );
+	@Autowired
+	private ArtemisProperties artemisProperties;
 
-            @Override
-            public void customize ( org.apache.activemq.artemis.core.config.Configuration configuration ) {
-                try {
-                    LOGGER.info( "Adding netty acceptor for: {}" , brokerUrl );
-                    configuration.addAcceptorConfiguration( "netty" , brokerUrl );
-                } catch ( Exception e ) {
-                    throw new RuntimeException( "Failed to add netty acceptor" , e );
-                }
-            }
-        };
-    }
+	@Bean
+	public ArtemisConfigurationCustomizer customizer() {
+		return new ArtemisConfigurationCustomizer() {
+			String brokerUrl = Stream.of("tcp://localhost:", String.valueOf(artemisProperties.getPort())) //
+					.collect(Collectors.joining());
+
+			@Override
+			public void customize(org.apache.activemq.artemis.core.config.Configuration configuration) {
+				try {
+					LOGGER.info("Adding netty acceptor for: {}", brokerUrl);
+					configuration.addAcceptorConfiguration("netty", brokerUrl);
+				}
+				catch (Exception e) {
+					throw new RuntimeException("Failed to add netty acceptor", e);
+				}
+			}
+		};
+	}
+
 }
