@@ -1,13 +1,13 @@
 package com.oogzy.spring.boot.jms;
 
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,10 +15,8 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.connection.CachingConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
-@RunWith ( SpringRunner.class )
 public class SpringJmsProducerTest {
     private static final Logger LOGGER = LoggerFactory.getLogger( SpringJmsProducerTest.class );
 

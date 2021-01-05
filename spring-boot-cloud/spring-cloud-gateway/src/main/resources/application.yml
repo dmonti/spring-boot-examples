@@ -17,7 +17,11 @@ management:
       web:
          exposure:
             include: gateway
+server:
+   port: 8060
 spring:
+   application:
+      name: gateway
    cloud:
       gateway:
          discovery:
