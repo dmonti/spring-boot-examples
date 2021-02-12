@@ -17,7 +17,7 @@
 	<properties>
 		<revision>1.0.0</revision>
 		<main.basedir>${basedir}</main.basedir>
-		<java.release>11</java.release>
+		<java.release>15</java.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
 		<spring-javaformat-maven-plugin.version>0.0.27</spring-javaformat-maven-plugin.version>
