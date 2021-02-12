@@ -1,6 +1,6 @@
 # spring-boot-examples
 
-Spring Boot v2.3.4.RELEASE examples over Maven 3 and Java 11
+Spring Boot v2.4.2.RELEASE examples over Maven 3 and Java 15
 
 ## Spring Boot Cloud Examples:
 - spring-cloud-eureka-client
