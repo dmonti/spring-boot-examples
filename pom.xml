@@ -20,7 +20,7 @@
 		<java.release>15</java.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
-		<spring-javaformat-maven-plugin.version>0.0.27</spring-javaformat-maven-plugin.version>
+		<spring-javaformat-maven-plugin.version>0.0.28</spring-javaformat-maven-plugin.version>
 	</properties>
 	<modules>
 		<module>spring-boot-cloud/spring-cloud-eureka-client</module>
