@@ -31,5 +31,8 @@ hs_err_pid*
 .project
 .settings
 
+# IntelliJ IDE
+.idea
+
 # OS Files #
 .DS_Store
