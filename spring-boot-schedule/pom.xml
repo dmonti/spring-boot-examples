@@ -7,7 +7,7 @@
 		<groupId>com.oogzy.spring.boot</groupId>
 		<artifactId>spring-boot-examples</artifactId>
 		<version>${revision}</version>
-		<relativePath>..</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>com.oogzy.spring.boot.schedule</groupId>
 	<artifactId>spring-boot-schedule</artifactId>
